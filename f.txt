@@ -1,0 +1,10 @@
+Gerenciamento de escalação de equipe: gerenciamento de perfis de jogadores, posições e estatísticas;
+• Agendamento de partidas: organização e agendamento de partidas ou torneios;
+• Acompanhamento de desempenho: rastreamento e análise de métricas de desempenho de jogadores e equipes;
+• Monitoramento de lesões e saúde: monitoramento de relatórios de saúde e lesões de jogadores;
+• Gerenciamento de cronograma de treinamento: organização e gerenciamento de sessões de treinamento;
+• Gerenciamento de inventário de equipamentos: rastreamento e gerenciamento de equipamentos esportivos;
+• Recrutamento de jogadores: gerenciamento do processo de observação e recrutamento de novos jogadores;
+• Ferramentas de engajamento de fãs: recursos para interação de fãs, como enquetes e integração de mídia social;
+• Gerenciamento financeiro: gerenciamento de finanças da equipe, incluindo orçamentos e despesas;
+• Mídia e relações públicas: tratamento de comunicados à mídia e atividades de relações públicas.
