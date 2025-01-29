@@ -2,6 +2,7 @@
 
 Implementação de projeto da disciplina de projeto de software
 Funcionalidades:
+
 *Team Roster Management: Managing player profiles, positions, and stats;
 • Match Scheduling: Organizing and scheduling matches or tournaments;
 • Performance Tracking: Tracking and analyzing player and team performance metrics;
