@@ -2,6 +2,10 @@
 
 # Implementação de projeto da disciplina de projeto de software
 
+**Aluna** : Marta Mirely Nascimento dos Santos
+
+**Professor** : Baldoíno
+
 **Funcionalidades implementadas:**
 
 * Team Roster Management: Managing player profiles, positions, and stats;
@@ -22,3 +26,5 @@
 * Financial Management: Managing team finances, including budgets and expenditures;
 
 * Media and Public Relations: Handling media releases and public relations activities.
+
+
