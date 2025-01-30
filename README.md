@@ -1,6 +1,6 @@
 # Sports Team Management App
 
-# Implementation of system requested in software project discipline
+## Implementation of system requested in software project discipline
 
 **Student** : Marta Mirely Nascimento dos Santos
 
