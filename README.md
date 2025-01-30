@@ -1,12 +1,12 @@
 # Sports Team Management App
 
-# Implementação de projeto da disciplina de projeto de software
+# Implementation of system requested in software project discipline
 
-**Aluna** : Marta Mirely Nascimento dos Santos
+**Student** : Marta Mirely Nascimento dos Santos
 
-**Professor** : Baldoíno
+**Teacher** : Baldoíno Fonseca
 
-**Funcionalidades implementadas:**
+**Implemented features:**
 
 * Team Roster Management: Managing player profiles, positions, and stats;
 
