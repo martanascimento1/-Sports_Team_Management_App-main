@@ -8,17 +8,10 @@ Funcionalidades implementadas:
 =======
 Funcionalidades:
 
-*Team Roster Management: Managing player profiles, positions, and stats;
-
-• Match Scheduling: Organizing and scheduling matches or tournaments;
-
-• Performance Tracking: Tracking and analyzing player and team performance metrics;
-
 • Injury and Health Monitoring: Monitoring player health and injury reports;
 
-• Training Schedule Management: Organizing and managing training sessions;
-
 • Equipment Inventory Management: Tracking and managing sports equipment;
+<<<<<<< HEAD
 
 • Player Recruitment: Managing the process of scouting and recruiting new players;
 
@@ -28,3 +21,5 @@ Funcionalidades:
 
 • Media and Public Relations: Handling media releases and public relations activities.
 >>>>>>> feefcf37cf849984214689564577c4947baef5c1
+=======
+>>>>>>> e51bb1e04d3d5e0e254040225f13194da3b05134
