@@ -19,6 +19,7 @@
 * Training Schedule Management: Organizing and managing training sessions;
 
 * Equipment Inventory Management: Tracking and managing sports equipment;
+
 * Player Recruitment: Managing the process of scouting and recruiting new players;
 
 * Fan Engagement Tools: Features for fan interaction, such as polls and social media integration;
