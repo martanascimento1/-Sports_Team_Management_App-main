@@ -77,6 +77,15 @@ def listar_inventario():
     for i, obj in enumerate(inventario, start=1):
         print(f"{i}. {obj['object']} - {obj['setor']} (Equipe: {obj['equipe']}, Ano: {obj['ano']})")
 
+def listar_lesoes_saude():
+    if not lesoes:
+        print("\nNenhum registro de saúde cadastrado.\n")
+        return
+
+    print("\n Monitoramento de Saúde")
+    for i, lesao in enumerate(lesoes, start=1):
+        print(f"{i}. Atleta: {lesao['atleta']}, Idade: {lesao['idade']}, Grau de risco: {lesao['grau']}")
+        print(f"   Último exame: {lesao['tempo']} atrás, Resultado: {lesao['resultado']}, Estado atual: {lesao['estado_atual']}\n")
 
         
         
@@ -89,7 +98,8 @@ def menu():
         print("3. Cadastrar Objeto no Inventário")
         print("4. Listar Inventário")
         print("5. Monitorar Lesões")
-        print("6. Sair")
+        print("6. Mostrar Lesões")
+        print("7. Sair")
 
         opcao = input("Escolha uma opção: ")
 
@@ -104,6 +114,8 @@ def menu():
         elif opcao == "5":
             monitorar_lesoes_saude()
         elif opcao == "6":
+            listar_lesoes_saude()
+        elif opcao == "7":
             print("\nSaindo...\n")
             break
         else:
