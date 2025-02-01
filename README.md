@@ -6,6 +6,10 @@
 
 **Teacher** : Baldoíno Fonseca
 
+**How to run the project** : Clone the repository using 'git clone - '
+
+**Required resources** : Any version from Python 3 onwards
+
 **Implemented features:**
 
 * Team Roster Management: Managing player profiles, positions, and stats;
