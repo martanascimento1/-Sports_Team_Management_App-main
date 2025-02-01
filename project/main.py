@@ -1,5 +1,5 @@
-from menu import Menu
+from gerenciador import Gerenciador
 
 if __name__ == "__main__":
-    gerenciador = Menu()
+    gerenciador = Gerenciador()
     gerenciador.menu()
