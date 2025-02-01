@@ -7,7 +7,8 @@
 **Teacher** : Baldoíno Fonseca
 
 **How to run the project** : Clone the repository 
- 'git clone - '
+
+ 'git clone -'
 
 **Required resources** : Any version from Python 3 onwards
 
