@@ -7,6 +7,9 @@ agendamentos = []
 treinos = []
 jogadores = []
 recrutamento = []
+desempenho_jogadores = []
+desempenho_equipe = []
+financas = []
 
 def cadastrar_perfil():
     name = input("Nome do Time: ")
@@ -183,7 +186,108 @@ def cadastrar_jogador_recrutamento():
     print("\nJogador cadastrado no processo de recrutamento com sucesso!\n")
 
     listar_jogadores_recrutamento()
+    
+def cadastrar_desempenho_jogador():
+    nome = input("Nome do atleta: ")
+    funcao = input("Função (posição do jogador): ")
+    melhora = input("Houve melhora no desempenho? (sim/não): ").strip().lower()
+    penalizacoes = input("O atleta sofreu penalizações? Se sim, quais? (ou digite 'nenhuma'): ")
 
+    jogador = {
+        "nome": nome,
+        "funcao": funcao,
+        "melhora": melhora,
+        "penalizacoes": penalizacoes
+    }
+
+    desempenho_jogadores.append(jogador)
+    print("\nDesempenho do jogador registrado com sucesso!\n")
+
+    listar_desempenho_jogadores()
+
+def cadastrar_desempenho_equipe():
+    ganhos = input("Os ganhos da equipe aumentaram ou diminuíram? ")
+    pontos_positivos = input("Principais pontos positivos da equipe: ")
+    pontos_negativos = input("Principais pontos negativos da equipe: ")
+    setor_maior = input("Setores com maior desempenho: ")
+    setor_menor = input("Setores com menor desempenho: ")
+
+    equipe = {
+        "ganhos": ganhos,
+        "pontos_positivos": pontos_positivos,
+        "pontos_negativos": pontos_negativos,
+        "setor_maior": setor_maior,
+        "setor_menor": setor_menor
+    }
+
+    desempenho_equipe.append(equipe)
+    print("\nDesempenho da equipe registrado com sucesso!\n")
+
+    listar_desempenho_equipe()
+    
+def atualizar_desempenho_jogador():
+    listar_desempenho_jogadores()
+    
+    if not desempenho_jogadores:
+        return
+
+    numero = int(input("Digite o número do jogador para atualizar o desempenho: ")) - 1
+
+    if 0 <= numero < len(desempenho_jogadores):
+        desempenho_jogadores[numero]["melhora"] = input("Houve melhora no desempenho? (sim/não): ").strip().lower()
+        desempenho_jogadores[numero]["penalizacoes"] = input("O atleta sofreu penalizações? Se sim, quais? (ou digite 'nenhuma'): ")
+
+        print("\nDesempenho do jogador atualizado com sucesso!\n")
+        listar_desempenho_jogadores()
+    else:
+        print("\nNúmero inválido. Tente novamente.\n")
+
+
+def atualizar_desempenho_equipe():
+    listar_desempenho_equipe()
+    
+    if not desempenho_equipe:
+        return
+
+    numero = int(input("Digite o número do desempenho da equipe para atualizar: ")) - 1
+
+    if 0 <= numero < len(desempenho_equipe):
+        desempenho_equipe[numero]["ganhos"] = input("Os ganhos da equipe aumentaram ou diminuíram? ")
+        desempenho_equipe[numero]["pontos_positivos"] = input("Principais pontos positivos da equipe: ")
+        desempenho_equipe[numero]["pontos_negativos"] = input("Principais pontos negativos da equipe: ")
+        desempenho_equipe[numero]["setor_maior"] = input("Setores com maior desempenho: ")
+        desempenho_equipe[numero]["setor_menor"] = input("Setores com menor desempenho: ")
+
+        print("\nDesempenho da equipe atualizado com sucesso!\n")
+        listar_desempenho_equipe()
+    else:
+        print("\nNúmero inválido. Tente novamente.\n")
+        
+def cadastrar_financas():
+    montante = float(input("Montante disponível (R$): "))
+    orcamento = float(input("Orçamento planejado para o semestre (R$): "))
+    gastos_atletas = float(input("Gastos com atletas (R$): "))
+    gastos_funcionarios = float(input("Gastos com demais funcionários (R$): "))
+    outras_despesas = float(input("Demais despesas (R$): "))
+    faturamento_mensal = float(input("Faturamento mensal (R$): "))
+    faturamento_semestre = float(input("Faturamento do último semestre (R$): "))
+    projecao_anual = float(input("Projeção de faturamento para o ano (R$): "))
+
+    financa = {
+        "montante_disponivel": montante,
+        "orcamento_semestral": orcamento,
+        "gastos_atletas": gastos_atletas,
+        "gastos_funcionarios": gastos_funcionarios,
+        "outras_despesas": outras_despesas,
+        "faturamento_mensal": faturamento_mensal,
+        "faturamento_semestral": faturamento_semestre,
+        "projecao_anual": projecao_anual
+    }
+
+    financas.append(financa)
+    print("\n Dados financeiros registrados com sucesso!\n")
+
+    listar_financas()
     
 def listar_treinos():
     if not treinos:
@@ -283,7 +387,84 @@ def listar_jogadores_recrutamento():
         print(f"   Função: {jogador['funcao']}, Histórico de Lesões: {jogador['historico_lesoes'].capitalize()}, Títulos Importantes: {jogador['titulos_importantes'].capitalize()}")
         print(f"   Bom Desempenho Anterior: {jogador['bom_desempenho'].capitalize()}, Status: {status}\n")
 
+def listar_desempenho_jogadores():
+    if not desempenho_jogadores:
+        print("\nNenhum desempenho de jogador registrado.\n")
+        return
+
+    print("\n Acompanhamento de Desempenho dos Jogadores")
+    for i, jogador in enumerate(desempenho_jogadores, start=1):
+        print(f"{i}. Nome: {jogador['nome']}, Função: {jogador['funcao']}")
+        print(f"   Houve Melhora: {jogador['melhora'].capitalize()}, Penalizações: {jogador['penalizacoes']}\n")
+   
+def listar_desempenho_equipe():
+    if not desempenho_equipe:
+        print("\nNenhum desempenho da equipe registrado.\n")
+        return
+
+    print("\nAcompanhamento de Desempenho da Equipe")
+    for i, equipe in enumerate(desempenho_equipe, start=1):
+        print(f"{i}. Ganhos: {equipe['ganhos']}")
+        print(f"   Pontos Positivos: {equipe['pontos_positivos']}")
+        print(f"   Pontos Negativos: {equipe['pontos_negativos']}")
+        print(f"   Setores com Maior Desempenho: {equipe['setor_maior']}")
+        print(f"   Setores com Menor Desempenho: {equipe['setor_menor']}\n")
+ 
+def listar_financas():
+    if not financas:
+        print("\nNenhum registro financeiro encontrado.\n")
+        return
+
+    print("\n Relatório Financeiro")
+    for i, financa in enumerate(financas, start=1):
+        print(f"{i}. Montante disponível: R$ {financa['montante_disponivel']:.2f}")
+        print(f"   Orçamento Semestral: R$ {financa['orcamento_semestral']:.2f}")
+        print(f"   Gastos com Atletas: R$ {financa['gastos_atletas']:.2f}")
+        print(f"   Gastos com Funcionários: R$ {financa['gastos_funcionarios']:.2f}")
+        print(f"   Outras Despesas: R$ {financa['outras_despesas']:.2f}")
+        print(f"   Faturamento Mensal: R$ {financa['faturamento_mensal']:.2f}")
+        print(f"   Faturamento Semestral: R$ {financa['faturamento_semestral']:.2f}")
+        print(f"   Projeção Anual: R$ {financa['projecao_anual']:.2f}\n")
+def atualizar_financas():
+    listar_financas()
     
+    if not financas:
+        return
+
+    numero = int(input("Digite o número do registro financeiro para atualizar: ")) - 1
+
+    if 0 <= numero < len(financas):
+        financas[numero]["montante_disponivel"] = float(input("Montante disponível (R$): "))
+        financas[numero]["orcamento_semestral"] = float(input("Orçamento planejado para o semestre (R$): "))
+        financas[numero]["gastos_atletas"] = float(input("Gastos com atletas (R$): "))
+        financas[numero]["gastos_funcionarios"] = float(input("Gastos com demais funcionários (R$): "))
+        financas[numero]["outras_despesas"] = float(input("Demais despesas (R$): "))
+        financas[numero]["faturamento_mensal"] = float(input("Faturamento mensal (R$): "))
+        financas[numero]["faturamento_semestral"] = float(input("Faturamento do último semestre (R$): "))
+        financas[numero]["projecao_anual"] = float(input("Projeção de faturamento para o ano (R$): "))
+
+        print("\n Dados financeiros atualizados com sucesso!\n")
+        listar_financas()
+    else:
+        print("\nNúmero inválido. Tente novamente.\n")
+
+# Função para exibir um resumo financeiro
+def resumo_financeiro():
+    if not financas:
+        print("\nNenhum dado financeiro registrado.\n")
+        return
+
+    financa = financas[-1]  # Pega o último registro financeiro inserido
+
+    despesas_totais = financa["gastos_atletas"] + financa["gastos_funcionarios"] + financa["outras_despesas"]
+    saldo_atual = financa["montante_disponivel"] + financa["faturamento_semestral"] - despesas_totais
+
+    print("\nResumo Financeiro")
+    print(f"Saldo Atual: R$ {saldo_atual:.2f}")
+    print(f"Despesas Totais: R$ {despesas_totais:.2f}")
+    print(f"Faturamento Mensal: R$ {financa['faturamento_mensal']:.2f}")
+    print(f"Projeção Anual: R$ {financa['projecao_anual']:.2f}\n")
+
 def menu():
     while True:
         print("\n Gerenciamento da sua equipe")
@@ -303,11 +484,16 @@ def menu():
         print ("14. Verificar escalação")
         print ("15. Adicionar novo jogador na lista de possíveis contratações")
         print ("16. Consultar lista de contratações desejadas")
-        print ("17. ")
-        print ("18. ")
-        print ("19. ")
-        print ("21. ")
-        print ("22. ")
+        print ("17. Cadastrar desempenho da equipe ")
+        print ("18. Cadastrar desempenho de atleta ")
+        print ("19. Atualizar desempenho da equipe")
+        print ("21. Atualizar desempenho de atleta ")
+        print ("22. Observar desempenho de atleta ")
+        print ("22. Observar desempenho da equipe ")
+        print ("23. Cadastrar dados financeiros")
+        print ("24. Atualizar dados financeiros ")
+        print ("25. Observar finanças")
+        print ("26. Resumo financeiro geral")
         print("0. Sair")
 
         opcao = input("Escolha uma opção: ")
@@ -344,6 +530,26 @@ def menu():
             cadastrar_jogador_recrutamento()
         elif opcao =="16":
             listar_jogadores_recrutamento()
+        elif opcao =="17":
+            cadastrar_desempenho_equipe()
+        elif opcao =="18":
+            cadastrar_desempenho_jogador()
+        elif opcao =="19":
+            atualizar_desempenho_equipe()
+        elif opcao =="20":
+            atualizar_desempenho_jogador()
+        elif opcao =="21":
+            listar_desempenho_equipe()
+        elif opcao =="22":
+            listar_desempenho_jogadores()
+        elif opcao =="23":
+            cadastrar_financas()
+        elif opcao =="24":
+            atualizar_financas()
+        elif opcao =="25":
+            listar_financas()
+        elif opcao =="26":
+            resumo_financeiro()
         elif opcao == "0":
             print("\nSaindo...\n")
             break
