@@ -109,7 +109,7 @@ class Gerenciador:
             self.resumo_financeiro()
           elif opcao == "0":
             print("\nSaindo...\n")
-            break  # O break está dentro do loop while
+            break  
           else:
             print("\nOpção inválida. Tente novamente.\n")   
             
@@ -189,8 +189,8 @@ class Gerenciador:
     def agendar_partida(self):
         tipo = input("O que deseja agendar? (partida/torneio): ").strip().lower()
         local = input("Local do evento: ")
-        data = input("Data da partida/torneio (DD/MM/AAAA): ")
-        horario = input("Horário do evento (HH:MM): ")
+        data = input("Data da partida/torneio  ")
+        horario = input("Horário do evento : ")
         adversario = input("Adversário ou equipes participantes: ")
 
         agendamento = Agendamento(tipo, local, data, horario, adversario)
@@ -209,8 +209,8 @@ class Gerenciador:
     # Métodos para Treino
     def agendar_treino(self):
         tipo = input("Tipo de treino: ")
-        data = input("Data do treino (DD/MM/AAAA): ")
-        horario = input("Horário de início (HH:MM): ")
+        data = input("Data do treino : ")
+        horario = input("Horário de início: ")
         duracao = input("Duração estimada (em minutos): ")
         local = input("Local do treinamento: ")
         profissional = input("Profissional responsável: ")
@@ -248,7 +248,7 @@ class Gerenciador:
         idade = input("Idade: ")
         funcao = input("Função (posição do jogador): ")
 
-        jogador = Jogador(nome, idade, funcao)
+        jogador = Atleta(nome, idade, funcao)
         self.jogadores.append(jogador)
         print("\nJogador cadastrado com sucesso!\n")
 
