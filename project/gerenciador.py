@@ -43,14 +43,11 @@ class Gerenciador:
           print("16. Consultar lista de contratações desejadas")
           print("17. Cadastrar desempenho da equipe")
           print("18. Cadastrar desempenho de atleta")
-          print("19. Atualizar desempenho da equipe")
-          print("20. Atualizar desempenho de atleta")
-          print("21. Observar desempenho de atleta")
-          print("22. Observar desempenho da equipe")
-          print("23. Cadastrar dados financeiros")
-          print("24. Atualizar dados financeiros")
-          print("25. Observar finanças")
-          print("26. Resumo financeiro geral")
+          print("19. Observar desempenho de atleta")
+          print("20. Observar desempenho da equipe")
+          print("21. Cadastrar dados financeiros")
+          print("22. Observar finanças")
+          print("23. Resumo financeiro geral")
           print("0. Sair")
 
           opcao = input("Escolha uma opção: ")
@@ -60,7 +57,7 @@ class Gerenciador:
           elif opcao == "2":
             self.listar_perfis()
           elif opcao == "3":
-            self.gerenciar_inventario()
+            self.cadastrar_inventario()
           elif opcao == "4":
             self.listar_inventario()
           elif opcao == "5":
@@ -92,20 +89,14 @@ class Gerenciador:
           elif opcao == "18":
             self.cadastrar_desempenho_jogador()
           elif opcao == "19":
-            self.atualizar_desempenho_equipe()
-          elif opcao == "20":
-            self.atualizar_desempenho_jogador()
-          elif opcao == "21":
             self.listar_desempenho_jogadores()
-          elif opcao == "22":
+          elif opcao == "20":
             self.listar_desempenho_equipe()
-          elif opcao == "23":
+          elif opcao == "21":
             self.cadastrar_financas()
-          elif opcao == "24":
-            self.atualizar_financas()
-          elif opcao == "25":
+          elif opcao == "22":
             self.listar_financas()
-          elif opcao == "26":
+          elif opcao == "23":
             self.resumo_financeiro()
           elif opcao == "0":
             print("\nSaindo...\n")
@@ -357,6 +348,8 @@ class Gerenciador:
         financa = Financas(montante, orcamento, gastos_atletas, gastos_funcionarios, outras_despesas, faturamento_mensal, faturamento_semestre, projecao_anual)
         self.financas.append(financa)
         print("\nDados financeiros registrados com sucesso!\n")
+        
+    
 
     def listar_financas(self):
         if not self.financas:
@@ -366,13 +359,14 @@ class Gerenciador:
         print("\n Relatório Financeiro")
         for i, financa in enumerate(self.financas, start=1):
             print(f"{i}. {financa}")
+    
 
     def resumo_financeiro(self):
         if not self.financas:
-            print("\nNenhum dado financeiro registrado.\n")
-            return
+          print("\nNenhum dado financeiro registrado.\n")
+          return
 
-        financa = self.financas[-1]  # Pega o último registro financeiro inserido
+        financa = self.financas[-1] 
 
         despesas_totais = financa.gastos_atletas + financa.gastos_funcionarios + financa.outras_despesas
         saldo_atual = financa.montante + financa.faturamento_semestre - despesas_totais
