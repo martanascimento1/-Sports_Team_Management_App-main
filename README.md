@@ -10,7 +10,7 @@
 
 * Clone the repository using: 
 
- `git clone - `
+ `git clone -project address`
 
  * Access the project folder:
 
